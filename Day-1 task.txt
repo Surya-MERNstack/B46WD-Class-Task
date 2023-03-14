@@ -11,8 +11,8 @@ Ans :     HTTP1:
      
      HTTP2:
       In the http2 is normaly 
-      send the source in bundle 
-      of data using the TCP in that
+      send the source of data in bundle 
+      by using the TCP in that
       no other data source will not block 
       other data
      
