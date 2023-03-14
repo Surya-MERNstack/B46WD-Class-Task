@@ -30,4 +30,4 @@ Ans :     HTTP1:
 3.codekata practice
 
  Ans: CodeKata it help to solve the problems and it's very helpfull to
-      grow the confident in the coding.
+      grow the confident in  coding.
