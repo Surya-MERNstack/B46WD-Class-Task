@@ -27,6 +27,27 @@
 console.log(array(obj1 , obj2))
       
 2.  use the rest countries "API URL -> https://restcountries.com/v3.1/all and display 
-    all the country flags in the console
+    all the country flags in the console?
+    
+    Ans :  let xmlRequest = new XMLHttpRequest;
+ 
+           xmlRequest.open('Get',"https://restcountries.com/v3.1/all");
+
+           xmlRequest.responseType = "json";
+
+           xmlRequest.send();
+
+           xmlRequest.onload = function () {
+           var responseObj = xmlRequest.response;
+           if(xmlRequest.status > 0) {
+           responseObj.forEach (function (country) {
+           console.log(country.flag);
+           })
+          }else{
+               console.log("Number of flags :" , xmlRequest.status);
+           }
+         };
+
+
     
 3. use the same rest countries and print all countries names,regions. sub-region and populations
