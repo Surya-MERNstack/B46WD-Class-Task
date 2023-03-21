@@ -1,0 +1,43 @@
+1. Do the below programs in anonymous function & IIFE?
+a. Print odd numbers in an array
+Ans: 
+   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9 ,10];
+        //creating the IIFE 
+        
+        (function (){
+          let oddnumbers = numbers.filter (function (numbers){
+              return numbers % 2 !== 0;
+          });
+          console.log(oddnumbers);
+        })();
+    
+b. Convert all the strings to title caps in a string array?
+Ans:
+     let mcuNames = ["thor", "hulk" , "captain america" , "black widow"];
+
+         (function (){
+            let createtouppercase = mcuNames.map(function (str){
+              return str.split(' ').map(function (words) {
+                return words.charAt(0).toUpperCase()+ words.slice(1)
+              }).join(' ')
+            });
+            console.log(mcuNames);
+            console.log(createtouppercase);
+         })();
+         
+         output :(4) ['thor', 'hulk', 'captain america', 'black widow']
+                 (4) ['Thor', 'Hulk', 'Captain America', 'Black Widow']
+        
+c. Sum of all numbers in an array
+d. Return all the prime numbers in an array
+e. Return all the palindromes in an array
+f. Return median of two sorted arrays of the same size.
+g. Remove duplicates from an array
+h. Rotate an array by k times
+
+2. Do the below programs in arrow functions?
+a. Print odd numbers in an array
+b. Convert all the strings to title caps in a string array
+c. Sum of all numbers in an array
+d. Return all the prime numbers in an array
+e. Return all the palindromes in an array
