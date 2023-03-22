@@ -63,7 +63,19 @@ Ans:
   })(numbers);
   
 console.log(primeNumber);
-e. Return all the palindromes in an array
+e. Return all the palindromes in an array?
+Ans:
+  let names = userInput[0].split(',');
+  
+  let palindromes = (function (arr){
+     
+       return arr.filter(function (words) {
+         let reverseword = words.toLowerCase().split('').reverse().join('');
+       return reverseword === words.toLowerCase();
+      });
+  })(names);
+
+console.log(palindromes);
 f. Return median of two sorted arrays of the same size.
 g. Remove duplicates from an array
 h. Rotate an array by k times
