@@ -63,6 +63,7 @@ Ans:
   })(numbers);
   
 console.log(primeNumber);
+    output : []
 e. Return all the palindromes in an array?
 Ans:
   let names = userInput[0].split(',');
@@ -76,8 +77,31 @@ Ans:
   })(names);
 
 console.log(palindromes);
-f. Return median of two sorted arrays of the same size.
-g. Remove duplicates from an array
+  output : [ 'racecar', 'level', 'deified' ];
+  
+f. Return median of two sorted arrays of the same size ?
+Ans: 
+   let number1 = [1,3,5,7];
+   let number2 = [2,4,6,8];
+   let median = ((a , b) =>{
+   let merge = [...a, ...b].sort((a, b) => a - b);
+   let mid = merge.length / 2;
+   return mid % 1 === 0 ? (merge[mid -1] + merge[mid])/ 2 :  merge[Math.floor(mid)]
+ })(number1 , number2);
+
+console.log(median);
+
+ output : 4.5
+g. Remove duplicates from an array?
+Ans:
+   var number = [1,2,2,3,4,5,5,7,7,8,9,9];
+   var uniqueNumber = ((arr)=>{
+    return arr.filter((value, index, array)=>{
+     return array.indexOf(value) === index;
+    })
+})(number);
+  console.log(uniqueNumber);
+  
 h. Rotate an array by k times
 
 2. Do the below programs in arrow functions?
