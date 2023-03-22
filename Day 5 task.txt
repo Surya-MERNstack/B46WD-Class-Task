@@ -28,7 +28,21 @@ Ans:
          output :(4) ['thor', 'hulk', 'captain america', 'black widow']
                  (4) ['Thor', 'Hulk', 'Captain America', 'Black Widow']
         
-c. Sum of all numbers in an array
+c. Sum of all numbers in an array?
+Ans: 
+     var number = [12345];
+     var sum = 0;
+     (function (){
+      var adding = number.forEach(function (number){
+         while(number > 0){
+           sum += number%10;
+           number = Math.floor(number/10)
+         };
+      });
+       console.log(sum);
+    })();
+    
+    output : 15
 d. Return all the prime numbers in an array
 e. Return all the palindromes in an array
 f. Return median of two sorted arrays of the same size.
