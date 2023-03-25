@@ -59,10 +59,71 @@ Ans:
        Total population above 2lakhs : 43849269
 
 c. Print the following details name, capital, flag using forEach function?
-Ans:
+Ans: 
+     let xmlrequest = new XMLHttpRequest();
+      xmlrequest.open('Get' ,' https://restcountries.com/v3.1/all ')
+      xmlrequest.responseType = 'json'
+      xmlrequest.send();
+
+      xmlrequest.onload = function () {
+         let requestObj = xmlrequest.response;
+         console.log(requestObj);
+         requestObj.forEach(function (item) {
+             console.log(item.name.common ,item.capital ,item.flag)
+         });
+      };
+      
+      output : some examples
+           Sri Lanka ['Sri Jayawardenepura Kotte'] 🇱🇰
+           Niger ['Niamey'] 🇳🇪
+           Suriname ['Paramaribo'] 🇸🇷
+           Angola ['Luanda'] 🇦🇴
 
 d. Print the total population of countries using reduce function?
 Ans:
+      let xmlrequest = new XMLHttpRequest();
+   xmlrequest.open('Get' , 'https://restcountries.com/v3.1/all ');
+   xmlrequest.responseType = 'json';
+   xmlrequest.send();
 
+   xmlrequest.onload = function () {     
+        let requestObj = xmlrequest.response;
+        console.log(requestObj)
+        totalPopulation = requestObj.reduce(function (total , item) {
+              if(typeof item.population === 'number') {
+                // console.log(item.population)
+                return total + item.population;
+               }
+          },0);
+          console.log(`Totalpopulation is :${totalPopulation}`)
+
+        };
+        
+        output : Totalpopulation is :7777721563
+        
 e. Print the country which uses US Dollars as currency?
 Ans:
+   
+    let xmlrequest = new XMLHttpRequest();
+    xmlrequest.open('Get' , 'https://restcountries.com/v3.1/all ');
+    xmlrequest.responseType = 'json';
+    xmlrequest.send();
+
+    xmlrequest.onload = function () {
+    let requestObj = xmlrequest.response;
+    console.log(requestObj);
+    
+   let Usdcountry = requestObj.filter(function (item) {
+      return item.currencies && item.currencies.USD
+      console.log(item.currencies.USD)
+    });
+      let countryName = Usdcountry.map(function (items) {
+          return items.name.common
+     
+    });
+    console.log(countryName)'
+  };
+  
+  output : 
+       (20) ['American Samoa', 'Cambodia', 'Panama', 'Puerto Rico', 'Marshall Islands', 'British Virgin Islands', 'El Salvador', 'United States Virgin Islands',                 'United States', 'Caribbean Netherlands', 'Palau', 'United States Minor Outlying Islands', 'Turks and Caicos Islands',
+            'Ecuador', 'Northern Mariana Islands', 'Timor-Leste', 'British Indian Ocean Territory', 'Guam', 'Bahamas', 'Micronesia']
